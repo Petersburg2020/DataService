@@ -7,6 +7,8 @@ import nx.peter.java.json.writer.JsonObject;
 import nx.peter.java.json.writer.JsonWriter;
 import nx.peter.java.pis.writer.Node;
 import nx.peter.java.pis.writer.PisWriter;
+import nx.peter.java.storage.FileManager;
+import nx.peter.java.util.Random;
 
 import java.io.File;
 
@@ -62,18 +64,34 @@ public class DocumentWriter extends DocumentCore<DocumentWriter, Document, Node,
         return false;
     }
 
+    public boolean storeAsPson() {
+        int random = Random.nextInt(0, 1);
+        String lines = "";
+        if (random == 1) lines = "PSON-TYPE: json\nDATA\n" +
+                    ((nx.peter.java.document.reader.Document) document)
+                            .toJson().getPrettyPrinter().toString();
+        else lines = "PSON-TYPE: pis\nDATA\n" +
+                ((nx.peter.java.document.reader.Document) document)
+                        .toPis().getPrettyPrinter().toString();
+        return FileManager.writeFile(getPath() + ".pson", lines, false);
+    }
+
+    @Override
     public boolean store(CharSequence path) {
         nx.peter.java.storage.File file = new nx.peter.java.storage.File(path);
-        DocumentWriter writer = new DocumentWriter(path, document.getType());
+        DocumentWriter writer = new DocumentWriter(document);
+        writer.setPath(path);
         return path != null &&
                 file.getExtension().contentEquals(".pis") ?
                 writer.storeAsPis() :
-                file.getExtension().contentEquals(".json") &&
-                        writer.storeAsJson();
+                file.getExtension().contentEquals(".json") ?
+                        writer.storeAsJson() :
+                        file.getExtension().contentEquals(".pson") &&
+                                writer.storeAsPson();
     }
 
     @Override
     public boolean store() {
-        return storeAsJson() && storeAsPis();
+        return storeAsPson();
     }
 }

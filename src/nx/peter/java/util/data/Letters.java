@@ -136,7 +136,7 @@ public abstract class Letters<L extends Letters> extends Data<L> {
     public int getFirstLetterIndex() {
         int index = 0;
         for (char c : data.toCharArray()) {
-            if (DataManager.isNonLetter(c))
+            if (DataManager.isLetter(c) && !" ".contentEquals(c + ""))
                 return index;
             index++;
         }

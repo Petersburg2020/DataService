@@ -242,7 +242,7 @@ public class DataManager {
     }
 
     public static boolean isNonLetter(char letter) {
-        return !"".contains(letter + "");
+        return !isNonLetter(letter + "");
     }
 
     public static boolean isNonLetter(CharSequence letter) {
@@ -747,10 +747,13 @@ public class DataManager {
             if (end >= data.length() - 1)
                 value = data.substring(start).trim();
 
-            if (value.startsWith("[") && !value.endsWith("]"))
-                value = value.substring(0, value.lastIndexOf("]") + 1);
-            else if (value.startsWith("{") && !value.endsWith("}"))
-                value = value.substring(0, value.lastIndexOf("}") + 1);
+            if (value.startsWith("[") && !value.endsWith("]")) {
+                end = value.lastIndexOf("]");
+                value = value.substring(0, end + 1);
+            } else if (value.startsWith("{") && !value.endsWith("}")) {
+                end = value.lastIndexOf("}");
+                value = value.substring(0, end + 1);
+            }
 
             String type = getType(value);
             if (type.contentEquals(NULL)) break;
@@ -1145,7 +1148,7 @@ public class DataManager {
             case LONG -> !extractLongs(value).isEmpty() ? extractLongs(value).get(0) : Long.MIN_VALUE;
             case FLOAT -> !extractFloats(value).isEmpty() ? extractFloats(value).get(0) : Float.MIN_VALUE;
             case DOUBLE -> !extractDecimals(value).isEmpty() ? extractDecimals(value).get(0) : Double.MIN_VALUE;
-            case STRING -> value.length() > 1 ? new Word(value).remove("\"", value.length() - 2).remove("\"").replaceAll("=10e=", "\n").replaceAll("=09e=", "\t").get() : value;
+            case STRING -> value.length() > 1 ? new Word(value).remove("\"", value.length() - 2).remove("\"").replaceAll("@10", "\n").replaceAll("@09", "\t").get() : value;
             default -> null;
         };
     }

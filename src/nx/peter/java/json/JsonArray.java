@@ -64,7 +64,7 @@ public class JsonArray extends JsonElement<JsonArray>
     @Override
     public String getString(int index) {
         Object value = get(index);
-        return isString(value) ? new Word((String) value).replaceAll("=e10=", '\n').replaceAll("=09=", '\t').get() : null;
+        return isString(value) ? new Word((String) value).replaceAll("@10", '\n').replaceAll("@09", '\t').get() : null;
     }
 
     @Override
@@ -169,7 +169,7 @@ public class JsonArray extends JsonElement<JsonArray>
     public JsonArray add(Object value) {
         if (value != null) {
             if (isString(value))
-                value = new Word((String) value).replaceAll("\n", "=f10=").replaceAll("\t", "=f09=").get();
+                value = new Word((String) value).replaceAll("\n", "@10").replaceAll("\t", "@09").get();
             root.array.add(value);
         }
         return this;
@@ -183,7 +183,7 @@ public class JsonArray extends JsonElement<JsonArray>
     @Override
     public JsonArray add(List<Object> value) {
         if (value != null) {
-            value = value.stream().map(value1 -> isString(value1) ? new Word((String) value1).replaceAll("\n", "=f10=").replaceAll("\t", "=f09=").get() : value1).collect(Collectors.toList());
+            value = value.stream().map(value1 -> isString(value1) ? new Word((String) value1).replaceAll("\n", "@10").replaceAll("\t", "@09").get() : value1).collect(Collectors.toList());
             root.array.add(value);
         }
         return this;
@@ -195,7 +195,7 @@ public class JsonArray extends JsonElement<JsonArray>
             Map<String, Object> temp = new LinkedHashMap<>();
             value.forEach((s, value1) -> {
                 if (isString(value1))
-                    value1 = new Word((String) value1).replaceAll("\n", "=f10=").replaceAll("\t", "=f09=").get();
+                    value1 = new Word((String) value1).replaceAll("\n", "@10").replaceAll("\t", "@09").get();
                 temp.put(s, value1);
             });
             root.array.add(temp);

@@ -6,8 +6,9 @@ import nx.peter.java.context.Context;
 import nx.peter.java.context.Reader;
 import nx.peter.java.context.Writer;
 import nx.peter.java.document.Model;
-import nx.peter.java.document.reader.Document;
+import nx.peter.java.document.core.Document;
 import nx.peter.java.document.reader.DocumentReader;
+import nx.peter.java.document.writer.DocumentWriter;
 import nx.peter.java.json.core.Root;
 import nx.peter.java.json.reader.JsonObject;
 import nx.peter.java.json.reader.JsonReader;
@@ -37,45 +38,12 @@ public class Main {
         json = new JsonReader(json.toString(), false).getSource().getObject();
         // println(json.getPrettyPrinter());
 
-        Reader<?, ?> reader = new JsonReader(File.FILES_FOLDER + "piservices_java.json");
-        // println(reader.getSource().getPrettyPrinter());
-        Writer<?, ?> writer = new JsonWriter(File.FILES_FOLDER + "test.json").setRoot((Root) reader.getSource());
-        println("Saved: " + writer.store());
+        Reader<?, ?> reader = new DocumentReader(File.FILES_FOLDER + "piservices_java.json", Document.Type.Book);
 
-        m = Advanced.fromJson(json, Test.class);
-        println(m);
-        // println(FileManager.readString(File.FILES_FOLDER + "piservices_java.json"));
+        nx.peter.java.document.reader.Document document = (nx.peter.java.document.reader.Document) reader.getSource().getContext().getReadable();
+        println(document.getPrettyPrinter());
 
-        /*DocumentReader reader = new DocumentReader(File.FILES_FOLDER + "piservices_java.json", Document.Type.Book);
-        Context context = reader.getSource().getContext();
         println();
-        // println(context.getPrettyPrinter());
-        Service service = context.getService(new Test(reader.getJson().toString()));
-        service.setListener(new Service.OnServiceRunListener<>() {
-            @Override
-            public void onRun(Context context, nx.peter.java.context.model.Model model) {
-                // println("Model{\n" + model + "\n}");
-            }
-
-            @Override
-            public void onStop(Context context, nx.peter.java.context.model.Model model) {
-                println(context.getPrettyPrinter().print());
-            }
-        });
-
-        // service.start();
-        // println(context.getPrettyPrinter().print());
-        println();
-
-        Document document = reader.getDocument();
-        // println(document.pageCount());
-        println();*/
-
-        /*PisReader pisReader = new PisReader(File.FILES_FOLDER + "piservices_java.pis");
-        println(pisReader.getSource().getNode().getPrettyPrinter());*/
-        println();
-
-        // json = new JsonReader(File.FILES_FOLDER + "piservices_java.json").getSource().getObject();
 
         Word word = new Word(
                 "{\"values\": [23, \"Peter\", 40.34, true, {\"scores\": [24, 51, 30, 89] ] }"

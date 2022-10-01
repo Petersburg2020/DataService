@@ -217,7 +217,7 @@ public abstract class Document<D extends Document> implements
      * to this {@link Document}
      */
     protected void decode() {
-        if (decodedPis != null && !decodedPis.isEmpty()) {
+        if (decodedPis != null && decodedPis.isNotEmpty()) {
             type = switch (decodedPis.getTag()) {
                 case Book.PIS_TAG -> Type.Book;
                 case Journal.PIS_TAG -> Type.Journal;
@@ -244,27 +244,18 @@ public abstract class Document<D extends Document> implements
                     }
                 }
             }
-        } else if (decodedJson != null && !decodedJson.isEmpty()) {
-            JsonObject json;
-            if (decodedJson.containsKey(Book.JSON_TAG)) {
-                type = Type.Book;
-                json = decodedJson.getObject(Book.JSON_TAG);
-            } else if (decodedJson.containsKey(Journal.JSON_TAG)) {
-                type = Type.Journal;
-                json = decodedJson.getObject(Book.JSON_TAG);
-            } else if (decodedJson.containsKey(Magazine.JSON_TAG)) {
-                type = Type.Magazine;
-                json = decodedJson.getObject(Book.JSON_TAG);
-            } else if (decodedJson.containsKey(NewsPaper.JSON_TAG)) {
-                type = Type.NewsPaper;
-                json = decodedJson.getObject(Book.JSON_TAG);
-            } else if (decodedJson.containsKey(Thesis.JSON_TAG)) {
-                type = Type.Thesis;
-                json = decodedJson.getObject(Book.JSON_TAG);
-            } else {
-                type = Type.Unknown;
-                json = decodedJson.getObject("UNKNOWN");
-            }
+        } else if (decodedJson != null && decodedJson.isNotEmpty()) {
+            JsonObject json = null;
+            if (decodedJson.containsKey(JSON_DOC_TYPE)) {
+                json = decodedJson;
+                switch (decodedJson.getString(JSON_DOC_TYPE)) {
+                    case Book.JSON_TAG -> type = Type.Book;
+                    case Journal.JSON_TAG -> type = Type.Journal;
+                    case Magazine.JSON_TAG -> type = Type.Magazine;
+                    case NewsPaper.JSON_TAG -> type = Type.NewsPaper;
+                    case Thesis.JSON_TAG -> type = Type.Thesis;
+                }
+            } else type = Type.Unknown;
 
             if (json != null) {
                 setTitle(json.containsKey(JSON_TITLE) ? json.getString(JSON_TITLE) : "");
@@ -457,7 +448,7 @@ public abstract class Document<D extends Document> implements
     @Override
     public Page.Creator getPage(int pageNumber) {
         if (pageNumber > 0)
-            return pages.get(pageNumber);
+            return pages.get(pageNumber - 1);
         return new Page.Creator();
     }
 
@@ -581,6 +572,11 @@ public abstract class Document<D extends Document> implements
             public String print() {
                 return Random.nextInt(1, 2) == 1 ? toJson().getPrettyPrinter().print() :
                         toPis().getPrettyPrinter().print();
+            }
+
+            @Override
+            public String toString() {
+                return print();
             }
         };
     }
