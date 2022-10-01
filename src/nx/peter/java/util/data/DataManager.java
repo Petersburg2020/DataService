@@ -726,112 +726,49 @@ public class DataManager {
         Word data = new Word(letters.toString().substring(letters.toString().indexOf("[") + 1, letters.toString().lastIndexOf("]")).trim());
         int start = 0, end = 0;
 
-        // System.out.println("\nArrayLetters: " + letters);
-
-        System.out.println("\nArrayData: " + data.get());
-        // start = data.indexOf("[") + 1;
-		/*System.out.println("\nArray".toUpperCase());
-		System.out.println("Data: " + data.get());
-		System.out.println("Length: " + data.length());*/
-
         while (start > -1 && start < data.length() - 1) {
             start = data.subLetters(end).getFirstLetterIndex();
             char firstLetter = data.subLetters(end).getFirstLetter();
-            // System.out.println("First Letter: " + firstLetter);
             if (firstLetter == ',' || firstLetter == '}') {
-                // System.out.println("End0: " + end);
                 end += data.subLetters(end).indexOf(firstLetter) + 1;
                 firstLetter = data.subLetters(end).getFirstLetter();
-                // System.out.println("First Letter: " + firstLetter);
-                // System.out.println("End1: " + end);
             }
 
             if (start <= -1)
                 break;
             start += end;
 
-            /*if (firstLetter == '\"') {
-                end = data.subLetters(start).contains("\",") ? data.indexOf("\",", start) : data.indexOf("\"", start);
-                if (end > -1)
-                    end++;
-                else
-                    end = data.length();
-            } else if (firstLetter == '[') {
-                // end = data.subWord(start).contains("],") ? data.indexOf("],", start) : data.lastIndexOf("]");
-                end = getCoverIndex(data, '[', ']', start);
-                if (end > -1)
-                    end++;
-            } else if (firstLetter == '{') {
-                // end = data.subWord(start).contains("},") ? data.indexOf("},", start) : data.lastIndexOf("}");
-                end = getCoverIndex(data, '{', '}', start);
-                if (end > -1)
-                    end++;
-            } else {
-                end = data.subLetters(start).contains(",") ? data.indexOf(",", start) : data.length() - 1;
-            }*/
-
             end = getEnd(data, firstLetter, start);
-            // System.out.print("Start: " + start);
-            // System.out.println(", End: " + end);
 
             if (end < 0 || start >= data.length())
                 break;
 
-            // System.out.println("Second Letter: " + data.substring(end - 1, end));
             String value = data.substring(start, end).trim();
             if (end >= data.length() - 1)
                 value = data.substring(start).trim();
 
+            if (value.startsWith("[") && !value.endsWith("]"))
+                value = value.substring(0, value.lastIndexOf("]") + 1);
+            else if (value.startsWith("{") && !value.endsWith("}"))
+                value = value.substring(0, value.lastIndexOf("}") + 1);
+
             String type = getType(value);
             if (type.contentEquals(NULL)) break;
 
-            switch (type) {
-                case OBJECT -> array.add(extractObject(value));
-                case ARRAY -> array.add(extractArray(value));
-                case BOOLEAN -> array.add(extractBools(value).get(0));
-                case INTEGER -> array.add(extractIntegers(value).get(0));
-                case LONG -> array.add(extractLongs(value).get(0));
-                case FLOAT -> array.add(extractFloats(value).get(0));
-                case DOUBLE -> array.add(extractDecimals(value).get(0));
-                case STRING -> array.add(value.length() > 1 ? value.substring(1, value.length() - 1).replaceAll("&#10", "\n").replaceAll("&#09", "\t") : value);
-            }
+            Object val = switch (type) {
+                case OBJECT -> extractObject(value);
+                case ARRAY -> extractArray(value);
+                default -> toObject(value);
+            };
+
+            array.add(val);
 
             if (type.contentEquals(OBJECT) || type.contentEquals(ARRAY) || type.contentEquals(STRING))
                 end++;
 
-            // System.out.println("Value: " + value);
-            // System.out.println("Type: " + getType(value));
-
-            /*if (value.startsWith("{") && value.endsWith("}")) {
-                array.add(extractObject(value));
-                if (end > -1) end++;
-            } else if (value.startsWith("[") && value.endsWith("]")) {
-                array.add(extractArray(value));
-                if (end > -1) end++;
-            } else if (isInteger(value))
-                array.add(extractIntegers(value).get(0));
-            else if (isLong(value))
-                array.add(extractLongs(value).get(0));
-            else if (isFloat(value))
-                array.add(extractFloats(value).get(0));
-            else if (isNumberOnly(value))
-                array.add(extractDoubles(value).get(0));
-            else if (isBool(value))
-                array.add(extractBools(value).get(0));
-            else {
-                // if (value.length() > 0)
-                array.add(value.length() > 1 ? value.substring(1, value.length() - 1).replaceAll("&#10", "\n").replaceAll("&#09", "\t") : value);
-                // else array.add(value);
-                // System.out.println("Value: " + value);
-                // array.add(new Word(value).remove("\"").remove("\"", value.length() - 1).get());
-                // if (data.endsWith(value)) break;
-                if (end > -1) end++;
-            }*/
-
             if (end >= data.length() - 1 || start >= data.length() - 1)
                 break;
         }
-        // System.out.println("Array: " + array);
         return array;
     }
 
@@ -840,10 +777,7 @@ public class DataManager {
         Word data = new Word(letters.toString().substring(letters.toString().indexOf("{") + 1, letters.toString().lastIndexOf("}")).replaceAll("\t", "").replaceAll("\n", "").trim());
         int start = 0, end = 0, lastIndex;
 
-        System.out.println("\nObjectLetters: " + letters);
-        System.out.println("\nObjectData: " + data.get());
-
-        while (start < data.length() - 1 && end < data.length() - 1 && end > -1 && start > -1) {
+        while (start < data.length() - 1 && end < data.length() - 1) {
             start = data.indexOf("\"", end) + 1;
             end = data.indexOf("\":", start);
             if (end < 0 || end > data.length() - 1 || start > data.length() - 1)
@@ -857,15 +791,15 @@ public class DataManager {
             lastIndex = start;
             start = data.subLetters(lastIndex).getFirstLetterIndex();
             char firstLetter = data.subLetters(lastIndex + 1).getFirstLetter();
+            if (firstLetter == ',' || firstLetter == '}') {
+                end += data.subLetters(end).indexOf(firstLetter) + 1;
+                firstLetter = data.subLetters(end).getFirstLetter();
+            }
 
-            if (start <= -1)
-                break;
-            else
-                start += lastIndex;
+            if (start <= -1) break;
+            else start += lastIndex;
 
             end = getEnd(data, firstLetter, start);
-
-            System.out.print("\nStart: " + start + ", End: " + end);
 
             if (end < 0 || start > data.length() - 1)
                 break;
@@ -874,55 +808,33 @@ public class DataManager {
             if (end >= data.length() - 1 && start < data.length() - 1)
                 value = data.substring(start).trim();
 
-            // System.out.println("Value: " + value);
-            // start = end + 1;
+            if (value.startsWith("[") && !value.endsWith("]"))
+                value = value.substring(0, value.lastIndexOf("]") + 1);
+            else if (value.startsWith("{") && !value.endsWith("}"))
+                value = value.substring(0, value.lastIndexOf("}") + 1);
+
             String type = getType(value);
             if (type.contentEquals(NULL)) break;
 
             Object val = switch (type) {
                 case OBJECT -> extractObject(value);
                 case ARRAY -> extractArray(value);
-                case BOOLEAN -> extractBools(value).get(0);
-                case INTEGER -> extractIntegers(value).get(0);
-                case LONG -> extractLongs(value).get(0);
-                case FLOAT -> extractFloats(value).get(0);
-                case DOUBLE -> extractDecimals(value).get(0);
-                default -> value.length() > 1 ? value.substring(1, value.length() - 1).replaceAll("&#10", "\n").replaceAll("&#09", "\t") : value;
+                default -> toObject(value);
             };
-
-            System.out.println("Key: " + key + ", Type(" + type + "), Value: " + val);
             object.put(key, val);
-            /*if (value.startsWith("{") && value.endsWith("}"))
-                object.put(key, extractObject(value));
-            else if (value.startsWith("[") && value.endsWith("]"))
-                object.put(key, extractArray(value));
-            else if (isInteger(value))
-                object.put(key, extractIntegers(value).get(0));
-            else if (isLong(value))
-                object.put(key, extractLongs(value).get(0));
-            else if (isFloat(value))
-                object.put(key, extractFloats(value).get(0));
-            else if (isNumberOnly(value))
-                object.put(key, extractDoubles(value).get(0));
-            else if (isBool(value))
-                object.put(key, extractBools(value).get(0));
-            else {
-                object.put(key, value.length() > 1 ? value.substring(1, value.length() - 1).replaceAll("&#10", "\n").replaceAll("&#09", "\t") : value);
-                if (data.endsWith(data.subLetters(start, end))) break;
+
+            if (type.contentEquals(OBJECT) || type.contentEquals(ARRAY) || type.contentEquals(STRING))
                 end++;
-            }*/
 
             if (end > data.length() - 1 || start > data.length() - 1 || end <= -1 || start <= -1)
                 break;
         }
-        System.out.println("Object: " + object);
         return object;
     }
 
     protected static int getEnd(Word data, char firstLetter, int start) {
-        int end = -1;
+        int end;
         if (start <= -1 || start > data.length() - 1) return -1;
-
         if (firstLetter == '\"') {
             end = data.subLetters(start).contains("\",") ? data.indexOf("\",", start) : data.indexOf("\" ", start);
             if (end > -1)
@@ -961,28 +873,27 @@ public class DataManager {
     public static final String NULL = "null";
 
     public static int getCoverIndex(Word source, char open, char close, int index) {
-        // System.out.println(open + "-" + close + " at index: " + index);
-        // System.out.println("Char at " + index + ": " + source.charAt(index + 1));
-        if (source == null || index > source.length() || index < 0)
+        if (source == null || index > source.length() || index < 0 && !source.subLetters(index).contains(open))
             return -1;
         int start, end = index, openCount = 0, closeCount = 0, lastIndex = -1;
-        while (true) {
-            start = source.indexOf(open, end);
-            // System.out.print("Start0: " + start);
-            if (start > -1) openCount++;
-            else return openCount == closeCount ? lastIndex : -1;
-            end = start + 1;
-            // System.out.print(", End0: " + end);
-            start = source.indexOf(close, end);
-            // System.out.print(" <=> Start1: " + start);
-            if (start > -1) closeCount++;
-            else return openCount == closeCount ? lastIndex : -1;
-            end = start + 1;
-            // System.out.println(", End1: " + end);
+        start = source.indexOf(open, end);
+        end = start;
+        lastIndex = end + 1;
+        while (start > -1 && start < source.length() - 1) {
+            start = source.indexOf(close, lastIndex);
+            if (start <= -1 || start < end) return openCount == closeCount ? lastIndex : -1;
+            start++;
+            if (start >= source.length() - 1) {
+                openCount = source.subLetters(end).getLetterCount(open);
+                closeCount = source.subLetters(end).getLetterCount(close);
+            } else {
+                openCount = source.subLetters(end, start).getLetterCount(open);
+                closeCount = source.subLetters(end, start).getLetterCount(close);
+            }
             lastIndex = start;
-            // System.out.println("Open: " + openCount + ", Close " + open + "" + close + ": " + closeCount);
             if (openCount == closeCount) return lastIndex;
         }
+        return -1;
     }
 
     public static boolean isValid(Word source, char open, char close, int start) {
@@ -1234,7 +1145,7 @@ public class DataManager {
             case LONG -> !extractLongs(value).isEmpty() ? extractLongs(value).get(0) : Long.MIN_VALUE;
             case FLOAT -> !extractFloats(value).isEmpty() ? extractFloats(value).get(0) : Float.MIN_VALUE;
             case DOUBLE -> !extractDecimals(value).isEmpty() ? extractDecimals(value).get(0) : Double.MIN_VALUE;
-            case STRING -> new Word(value).remove("\"", value.length() - 2).remove("\"").get();
+            case STRING -> value.length() > 1 ? new Word(value).remove("\"", value.length() - 2).remove("\"").replaceAll("=10e=", "\n").replaceAll("=09e=", "\t").get() : value;
             default -> null;
         };
     }

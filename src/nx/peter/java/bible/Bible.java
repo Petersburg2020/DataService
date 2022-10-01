@@ -44,7 +44,7 @@ public interface Bible {
     Book getBook(CharSequence book);
 
     Testament getTestament(Era era);
-    
+
     void findChapters(CharSequence query, OnSearchListener<Chapter> listener);
 
     void findChapters(Era era, CharSequence query, OnSearchListener<Chapter> listener);
@@ -61,19 +61,11 @@ public interface Bible {
 
 
     enum Era {
-        New,
-        Old
+        New, Old
     }
 
     enum Version {
-        ACV,
-        AKJV,
-        ASV,
-        BBE,
-        DARBY,
-        DRA,
-        RVA,
-        YLT
+        ACV, AKJV, ASV, BBE, DARBY, DRA, RVA, YLT
     }
 
     interface Item<I extends Item> {
@@ -167,8 +159,7 @@ public interface Bible {
             }
 
             public Builder addBook(Book book) {
-                if (book != null && !books.contains(book))
-                    books.add(book);
+                if (book != null && !books.contains(book)) books.add(book);
                 return this;
             }
 
@@ -329,8 +320,7 @@ public interface Bible {
                         List<Chapter> chapters = new ArrayList<>();
                         for (Book book : books)
                             for (Chapter chapter : book.getChapters())
-                                if (chapter.contains(query))
-                                    chapters.add(chapter);
+                                if (chapter.contains(query)) chapters.add(chapter);
                         return new Result<>(query, getContent(), chapters);
                     }
 
@@ -391,14 +381,12 @@ public interface Bible {
                 this.abbr = abbr.toString();
                 this.chapters = new ArrayList<>();
                 for (Chapter c : chapters)
-                    if (c != null)
-                        this.chapters.add(c);
+                    if (c != null) this.chapters.add(c);
                 index = 0;
             }
 
             public Builder addChapter(Chapter chapter) {
-                if (chapter != null && !new Chapters(chapters).contains(chapter))
-                    chapters.add(chapter);
+                if (chapter != null && !new Chapters(chapters).contains(chapter)) chapters.add(chapter);
                 return this;
             }
 
@@ -579,8 +567,7 @@ public interface Bible {
                 this.index = chapter;
                 this.verses = new ArrayList<>();
                 for (Verse v : verses)
-                    if (v.isValid() && !contains(v))
-                        this.verses.add(v);
+                    if (v.isValid() && !contains(v)) this.verses.add(v);
             }
 
             public Builder setBook(String book) {
@@ -594,8 +581,7 @@ public interface Bible {
             }
 
             public Builder addVerse(Verse verse) {
-                if (verse != null)
-                    verses.add(verse);
+                if (verse != null) verses.add(verse);
                 return this;
             }
 
@@ -623,8 +609,7 @@ public interface Bible {
                     public Result<Verse> findVerses(CharSequence query) {
                         List<Verse> verses = new ArrayList<>();
                         for (Verse verse : getVerses())
-                            if (verse.contains(query))
-                                verses.add(verse);
+                            if (verse.contains(query)) verses.add(verse);
                         return new Result<>(query, getContent(), verses);
                     }
 
@@ -908,8 +893,7 @@ public interface Bible {
 
         public Book get(CharSequence title) {
             for (Book b : items)
-                if (b.getTitle().contentEquals(title))
-                    return b;
+                if (b.getTitle().contentEquals(title)) return b;
             return null;
         }
 
@@ -930,15 +914,13 @@ public interface Bible {
 
         public Chapter get(Verse verse) {
             for (Chapter c : items)
-                if (c.contains(verse))
-                    return c;
+                if (c.contains(verse)) return c;
             return null;
         }
 
         public Chapter get(CharSequence verse) {
             for (Chapter c : items)
-                if (c.contains(verse))
-                    return c;
+                if (c.contains(verse)) return c;
             return null;
         }
 
@@ -957,10 +939,8 @@ public interface Bible {
         }
 
         public boolean contains(CharSequence query) {
-            if (query != null)
-                for (Verse v : items)
-                    if (v.equals(query) || v.contains(query))
-                        return true;
+            if (query != null) for (Verse v : items)
+                if (v.equals(query) || v.contains(query)) return true;
             return false;
         }
     }
@@ -983,10 +963,8 @@ public interface Bible {
         }
 
         public I get(int index) {
-            if (index >= 0 && index < size())
-                for (I item : items)
-                    if (item.getIndex() == index)
-                        return item;
+            if (index >= 0 && index < size()) for (I item : items)
+                if (item.getIndex() == index) return item;
             return null;
         }
 
@@ -996,8 +974,7 @@ public interface Bible {
 
         public int indexOf(I item) {
             for (I i : items)
-                if (i.equalsIgnoreIndex(item))
-                    return i.getIndex();
+                if (i.equalsIgnoreIndex(item)) return i.getIndex();
             return 0;
         }
 
@@ -1060,7 +1037,7 @@ public interface Bible {
             String path = File.FILES_FOLDER + "bible/" + version.toString() + ".txt";
             List<String> lines = FileManager.readLines(path);
 
-            name = lines.get(0);
+            name = new Texts(lines.get(0)).subLetters(0, lines.get(0).indexOf("(") - 1).get();
             System.out.println("Lines: " + lines.size());
 
             Testament.Builder testament = null;
@@ -1071,62 +1048,57 @@ public interface Bible {
 
             for (String line : lines) {
                 Texts texts = new Texts(line);
-                if (index > 0)
-                    if (texts.isNotEmpty()) {
-                        Letters.Words words = texts.getWords();
-                        if (words.size() == 1 || texts.startsWith("Revelation ") || texts.startsWith("Song of ") || texts.startsWith("I ") || texts.startsWith("II") || texts.startsWith("III")) {
-                            if (words.getFirst().contentEquals("Genesis"))
-                                testament = new Testament.Builder(Era.Old);
-                            else if (words.getFirst().contentEquals("Matthew")) {
-                                if (testament != null) tOld = testament.build();
-                                testament = new Testament.Builder(Era.New);
+                if (index > 0) if (texts.isNotEmpty()) {
+                    Letters.Words words = texts.getWords();
+                    if (words.size() == 1 || texts.startsWith("Revelation ") || texts.startsWith("Song of ") || texts.startsWith("I ") || texts.startsWith("II") || texts.startsWith("III")) {
+                        if (words.getFirst().contentEquals("Genesis")) testament = new Testament.Builder(Era.Old);
+                        else if (words.getFirst().contentEquals("Matthew")) {
+                            if (testament != null) tOld = testament.build();
+                            testament = new Testament.Builder(Era.New);
+                        }
+
+                        if (book != null) testament.addBook(book.build());
+
+                        bookIndex++;
+                        book = new Book.Builder(texts.get());
+                        assert testament != null;
+                        book.setEra(testament.era);
+                        book.setIndex(bookIndex);
+                        // chapter = new Chapter.Builder(1);
+                        // System.out.println("Book: \"" + book.title + "\"");
+                    } else {
+                        Word first = words.getFirst();
+                        String bookAbbr = first.getWordsOnly().getFirst().get();
+                        if (book != null) {
+                            book.setAbbr(bookAbbr);
+                            Letters.Numbers numbers = first.extractIntegers();
+                            // System.out.println("First: \"" + first.get() + "\"");
+                            int temp = numbers.getFirst().getInteger();
+                            if (temp != chapterIndex || (chapter != null && !chapter.book.contentEquals(book.title))) {
+                                if (chapter != null) book.addChapter(chapter.build());
+                                chapter = new Chapter.Builder(temp);
+                                chapter.setBook(book.title);
+                                chapter.setEra(book.era);
+                                chapterIndex = temp;
                             }
+                            temp = numbers.getLast().getInteger();
+                            String content = texts.subLetters(" ", 0).trim().get();
+                            Verse.Builder verse = new Verse.Builder(temp, content);
+                            verse.setBook(book.title);
+                            verse.setChapter(chapterIndex);
+                            verse.setEra(book.era);
 
-                            if (book != null)
-                                testament.addBook(book.build());
-
-                            bookIndex++;
-                            book = new Book.Builder(texts.get());
-                            assert testament != null;
-                            book.setEra(testament.era);
-                            book.setIndex(bookIndex);
-                            // chapter = new Chapter.Builder(1);
-                            // System.out.println("Book: \"" + book.title + "\"");
-                        } else {
-                            Word first = words.getFirst();
-                            String bookAbbr = first.getWordsOnly().getFirst().get();
-                            if (book != null) {
-                                book.setAbbr(bookAbbr);
-                                Letters.Numbers numbers = first.extractIntegers();
-                                // System.out.println("First: \"" + first.get() + "\"");
-                                int temp = numbers.getFirst().getInteger();
-                                if (temp != chapterIndex || (chapter != null && !chapter.book.contentEquals(book.title))) {
-                                    if (chapter != null)
-                                        book.addChapter(chapter.build());
-                                    chapter = new Chapter.Builder(temp);
-                                    chapter.setBook(book.title);
-                                    chapter.setEra(book.era);
-                                    chapterIndex = temp;
-                                }
-                                temp = numbers.getLast().getInteger();
-                                String content = texts.subLetters(" ", 0).trim().get();
-                                Verse.Builder verse = new Verse.Builder(temp, content);
-                                verse.setBook(book.title);
-                                verse.setChapter(chapterIndex);
-                                verse.setEra(book.era);
-
-                                // System.out.println(verse.build());
-                                assert chapter != null;
-                                chapter.addVerse(verse.build());
-                            }
+                            // System.out.println(verse.build());
+                            assert chapter != null;
+                            chapter.addVerse(verse.build());
                         }
                     }
+                }
                 index++;
             }
 
-            if (testament != null)
-                if (testament.era.equals(Era.Old)) tOld = testament.build();
-                else tNew = testament.build();
+            if (testament != null) if (testament.era.equals(Era.Old)) tOld = testament.build();
+            else tNew = testament.build();
         }
 
         @Override
@@ -1460,6 +1432,7 @@ public interface Bible {
 
     interface OnSearchListener<I extends Item<I>> {
         void onSearchInProgress(Result<I> result, int durationInSecs);
+
         void onSearchCompleted(Result<I> result, long durationInMillis);
     }
 

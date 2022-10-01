@@ -18,11 +18,15 @@ public class JsonWriter extends
     }
 
     public JsonWriter(CharSequence path) {
-        super(path, false);
+        this(path, false);
     }
 
-    public JsonWriter(CharSequence jsonSource, boolean isPath) {
-        super(jsonSource, isPath, false);
+    public JsonWriter(CharSequence path, boolean append) {
+        super(path, append);
+    }
+
+    public JsonWriter(CharSequence jsonSource, boolean append, boolean isPath) {
+        super(jsonSource, isPath, append);
     }
 
     public boolean store() {
@@ -34,7 +38,6 @@ public class JsonWriter extends
     }
 
     public boolean store(CharSequence path, boolean prettyPrint) {
-        System.out.println("Path: " + path);
         if (path != null)
             return FileManager.writeFile(path, prettyPrint ? getRoot().getPrettyPrinter().print() : getRoot().toString(), false);
         return false;

@@ -1,5 +1,7 @@
 package nx.peter.java;
 
+import nx.peter.java.bible.AKJVBible;
+import nx.peter.java.bible.Bible;
 import nx.peter.java.context.Context;
 import nx.peter.java.context.Reader;
 import nx.peter.java.context.Writer;
@@ -33,10 +35,10 @@ public class Main {
         // println(json);
 
         json = new JsonReader(json.toString(), false).getSource().getObject();
-        println(json.getPrettyPrinter());
+        // println(json.getPrettyPrinter());
 
-        Reader<?, ?> reader = new JsonReader(File.FILES_FOLDER + "quiz.json");
-
+        Reader<?, ?> reader = new JsonReader(File.FILES_FOLDER + "piservices_java.json");
+        // println(reader.getSource().getPrettyPrinter());
         Writer<?, ?> writer = new JsonWriter(File.FILES_FOLDER + "test.json").setRoot((Root) reader.getSource());
         println("Saved: " + writer.store());
 
@@ -81,7 +83,20 @@ public class Main {
         int start = word.indexOf('[');
         int end = DataManager.getCoverIndex(word, '[', ']', 0);
         println(DataManager.getCoverIndex(word, '[', ']', 0));
+        println();
 
+        Bible bible = new AKJVBible();
+        println(bible.getName());
+
+        bible.findVerses("God", new Bible.OnSearchListener<>() {
+            @Override
+            public void onSearchInProgress(Bible.Result<Bible.Verse> result, int durationInSecs) {}
+
+            @Override
+            public void onSearchCompleted(Bible.Result<Bible.Verse> result, long durationInMillis) {
+                println(result.get(1));
+            }
+        });
     }
 
     public static class Test extends Model {

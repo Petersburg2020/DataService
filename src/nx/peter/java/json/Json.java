@@ -210,7 +210,7 @@ public class Json<JA extends JsonElement, JO extends JsonElement, JE extends Jso
 
         @Override
         public JsonWriter openWriter(CharSequence source, boolean isPath) {
-            return new JsonWriter(source, isPath);
+            return new JsonWriter(source, true, isPath);
         }
 
         @Override
