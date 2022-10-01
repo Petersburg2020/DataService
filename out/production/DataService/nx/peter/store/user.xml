@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<user address="7 Adeboga close &amp;#10 Dabira b/s Command" age="26" class="nx.peter.java.test.User" email="amp@email.com" name="Peter">
+	<attributes>
+		<item>{type=name, attribute=Peter, className=nx.peter.java.test.User$Attribute}
+		</item>
+		<item>{type=email, attribute=amp@email.com, className=nx.peter.java.test.User$Attribute}
+		</item>
+		<item>{type=address, attribute=7 Adeboga close Dabira b/s Command, className=nx.peter.java.test.User$Attribute}
+		</item>
+	</attributes>
+	</user>

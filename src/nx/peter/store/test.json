@@ -1,0 +1,13 @@
+{
+	"modelName": "Test", 
+	"modelId": 1, 
+	"name": "Peter", 
+	"className": "nx.peter.java.Main$Test", 
+	"list": [
+		"Base", 
+		"Tree", 
+		"Deal"
+	], 
+	"age": 20, 
+	"content": "Here is the content."
+}

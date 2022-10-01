@@ -1,0 +1,1415 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "How many zeros are there in a googol?",
+      "correct_answer": "100",
+      "incorrect_answers": [
+        "10",
+        "1,000",
+        "1,000,000"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What are the first 6 digits of the number 'Pi'?",
+      "correct_answer": "3.14159",
+      "incorrect_answers": [
+        "3.14169",
+        "3.12423",
+        "3.25812"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the Roman numeral for 500?",
+      "correct_answer": "D",
+      "incorrect_answers": [
+        "L",
+        "C",
+        "X"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What prime number comes next after 19?",
+      "correct_answer": "23",
+      "incorrect_answers": [
+        "25",
+        "21",
+        "27"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the alphanumeric representation of the imaginary number?",
+      "correct_answer": "i",
+      "incorrect_answers": [
+        "e",
+        "n",
+        "x"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The decimal number 31 in hexadecimal would be what?",
+      "correct_answer": "1F",
+      "incorrect_answers": [
+        "3D",
+        "2E",
+        "1B"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "The metric prefix 'atto' makes a measurement how much smaller than the base unit?",
+      "correct_answer": "One Quintillionth",
+      "incorrect_answers": [
+        "One Billionth",
+        "One Quadrillionth",
+        "One Septillionth"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The French mathematician Eacute variste Galois is primarily known for his work in which?",
+      "correct_answer": "Galois Theory",
+      "incorrect_answers": [
+        "Galois' Continued Fractions",
+        "Galois' Method for PDE's ",
+        "Abelian Integration"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the correct order of operations for solving equations?",
+      "correct_answer": "Parentheses, Exponents, Multiplication, Division, Addition, Subtraction",
+      "incorrect_answers": [
+        "Addition, Multiplication, Division, Subtraction, Addition, Parentheses",
+        "Parentheses, Exponents, Addition, Substraction, Multiplication, Division",
+        "The order in which the operations are written."
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the fourth digit of 'pi'?",
+      "correct_answer": "1",
+      "incorrect_answers": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In Roman Numerals, what does XL equate to?",
+      "correct_answer": "40",
+      "incorrect_answers": [
+        "60",
+        "15",
+        "90"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "How many zeptometres are inside one femtometre?",
+      "correct_answer": "1,000,000",
+      "incorrect_answers": [
+        "10",
+        "1,000,000,000",
+        "1000"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What prime number comes next after 19?",
+      "correct_answer": "23",
+      "incorrect_answers": [
+        "25",
+        "21",
+        "27"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the plane curve proposed by Descartes to challenge Fermat's extremum-finding techniques called?",
+      "correct_answer": "Folium of Descartes",
+      "incorrect_answers": [
+        "Elliptic Paraboloid of Descartes",
+        "Cartesian Coordinates",
+        "Descarte&#039;s Helicoid"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which greek mathematician ran through the streets of Syracuse naked while shouting 'Eureka' after discovering the principle of displacement?",
+      "correct_answer": "Archimedes",
+      "incorrect_answers": [
+        "Euclid",
+        "Homer",
+        "Eratosthenes"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of the following famous mathematicians died in a duel at the age of 20?",
+      "correct_answer": "Galois",
+      "incorrect_answers": [
+        "Abel",
+        "Euler",
+        "Gauss"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "How many books are in Euclid's Elements of Geometry?",
+      "correct_answer": "13",
+      "incorrect_answers": [
+        "8",
+        "10",
+        "17"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "The proof for the Chinese Remainder Theorem used in Number Theory was NOT developed by its first publisher, Sun Tzu.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "111,111,111 x 111,111,111 = 12,345,678,987,654,321",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "To the nearest whole number, how many radians are in a whole circle?",
+      "correct_answer": "6",
+      "incorrect_answers": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "hard",
+      "question": "The binary number '101001101' is equivalent to the Decimal number '334'",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "The sum of any two odd integers is odd.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "The Pythagorean theorem states that the square of the hypotenuse is equal to the product of the squares of the other two sides.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "A universal set, or a set that contains all sets, exists.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "hard",
+      "question": "The binary number '101001101' is equivalent to the Decimal number '334'",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "An equilateral triangle always has every angle measuring 60°.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "hard",
+      "question": "If you could fold a piece of paper in half 50 times, its' thickness will be 3\/4th the distance from the Earth to the Sun.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "E = MC3",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "The sum of any two odd integers is odd.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "An isosceles triangle has two sides of equal length as opposed to three.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "A scalene triangle has two sides of equal length.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of the following dice is not a platonic solid?",
+      "correct_answer": "10-sided die",
+      "incorrect_answers": [
+        "12-sided die",
+        "20-sided die",
+        "8-sided die"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of the following mathematicians made major contributions to game theory?",
+      "correct_answer": "John Von Neumann",
+      "incorrect_answers": [
+        "Carl Friedrich Gauss",
+        "Leonhard Euler",
+        "Stefan Banach"
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The notion of a 'set that contains all sets which do not contain themselves' is a paradoxical idea attributed to which English philospher?",
+      "correct_answer": "Bertrand Russel",
+      "incorrect_answers": [
+        "Francis Bacon",
+        "John Locke",
+        "Alfred North Whitehead"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "The flag of South Africa features 7 colours.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "Vatican City is a country.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "San Marino is the only country completely surrounded by another country.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "Alaska is the largest state in the United States.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "There are no deserts in Europe.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "The capital of the US State Ohio is the city of Chillicothe.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Japan has left-hand side traffic.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Norway has a larger land area than Sweden.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "Tokyo is the capital of Japan.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "New Haven is the capital city of the state of Connecticut in the United States.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Israel is 7 hours ahead of New York.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "There is a city called Rome in every continent on Earth.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Gothenburg is the capital of Sweden.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "There exists an island named 'Java'.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "There are no deserts in Europe.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "You could walk from Norway to North Korea while only passing through Russia.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "hard",
+      "question": "Switzerland has four national languages, English being one of them.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Japan has left-hand side traffic.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "Nova Scotia is on the east coast of Canada.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Is Tartu the capital of Estonia?",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which city is the capital of the United States of America?",
+      "correct_answer": "Washington D.C",
+      "incorrect_answers": [
+        "Seattle",
+        "Albany",
+        "Los Angeles"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which country does Austria not border?",
+      "correct_answer": "France",
+      "incorrect_answers": [
+        "Slovenia",
+        "Switzerland",
+        "Slovakia"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The mountainous Khyber Pass connects which of the two following countries?",
+      "correct_answer": "Afghanistan and Pakistan",
+      "incorrect_answers": [
+        "India and Nepal",
+        "Pakistan and India",
+        "Tajikistan and Kyrgyzstan"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "How many time zones does China have?",
+      "correct_answer": "1",
+      "incorrect_answers": [
+        "3",
+        "4",
+        "2"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What country has a horizontal bicolor red and white flag?",
+      "correct_answer": "Monaco",
+      "incorrect_answers": [
+        "Bahrain",
+        "Malta",
+        "Liechenstein"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The Hunua Ranges is located in...",
+      "correct_answer": "New Zealand",
+      "incorrect_answers": [
+        "Nepal",
+        "China",
+        "Mexico"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which ocean borders the west coast of the United States?",
+      "correct_answer": "Pacific",
+      "incorrect_answers": [
+        "Atlantic",
+        "Indian",
+        "Arctic"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which English county will you find the University of East Anglia?",
+      "correct_answer": "Norfolk",
+      "incorrect_answers": [
+        "Suffolk",
+        "Essex",
+        "Cambridgeshire"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the name of the only remaining Grand Duchy in the world ?",
+      "correct_answer": "Luxembourg",
+      "incorrect_answers": [
+        "Montenegro",
+        "Liechtenstein",
+        "Andorra"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "How many time zones are in Russia?",
+      "correct_answer": "11",
+      "incorrect_answers": [
+        "8",
+        "5",
+        "2"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Where are the cars of the brand &quot;Ferrari&quot; manufactured?",
+      "correct_answer": "Italy",
+      "incorrect_answers": [
+        "Romania",
+        "Germany",
+        "Russia"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which Italian city is home of the car manufacturer 'Fiat'?",
+      "correct_answer": "Turin",
+      "incorrect_answers": [
+        "Maranello",
+        "Modena",
+        "Rome"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following car manufacturers had a war named after it?",
+      "correct_answer": "Toyota",
+      "incorrect_answers": [
+        "Honda",
+        "Ford",
+        "Volkswagen"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Jaguar Cars was previously owned by which car manfacturer?",
+      "correct_answer": "Ford",
+      "incorrect_answers": [
+        "Chrysler",
+        "General Motors",
+        "Fiat"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What UK Train does NOT go over 125MPH?",
+      "correct_answer": "Sprinter",
+      "incorrect_answers": [
+        "Class 43",
+        "Javelin",
+        "Pendolino"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "The full English name of the car manufacturer BMW is Bavarian Motor Works",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "The LS1 engine is how many cubic inches?",
+      "correct_answer": "346",
+      "incorrect_answers": [
+        "350",
+        "355",
+        "360"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "The LS3 engine is how many cubic inches?",
+      "correct_answer": "376",
+      "incorrect_answers": [
+        "346",
+        "364",
+        "427"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What country was the Trabant 601 manufactured in?",
+      "correct_answer": "East Germany",
+      "incorrect_answers": [
+        "Soviet Union",
+        "Hungary",
+        "France"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the fastest road legal car in the world?",
+      "correct_answer": "Koenigsegg Agera RS",
+      "incorrect_answers": [
+        "Hennessy Venom GT",
+        "Bugatti Veyron Super Sport",
+        "Pagani Huayra BC"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which Japanese company is the world's largest manufacturer of motorcycles?",
+      "correct_answer": "Honda",
+      "incorrect_answers": [
+        "Yamaha",
+        "Suzuki",
+        "Kawasaki"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What country is the Hussarya supercar, made by the car manufacturer &quot;Arrinera&quot;, assembled in?",
+      "correct_answer": "Poland",
+      "incorrect_answers": [
+        "China",
+        "Sweden",
+        "Italy"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of the following vehicles featured a full glass roof at base model?",
+      "correct_answer": "Renault Avantime",
+      "incorrect_answers": [
+        "Chevy Volt",
+        "Mercedes-Benz A-Class",
+        "Honda Odyssey"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "When was Tesla founded?",
+      "correct_answer": "2003",
+      "incorrect_answers": [
+        "2008",
+        "2005",
+        "2007"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which car brand does NOT belong to General Motors?",
+      "correct_answer": "Ford",
+      "incorrect_answers": [
+        "Buick",
+        "Cadillac",
+        "Chevrolet"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which one is NOT the function of engine oil in car engines?",
+      "correct_answer": "Combustion",
+      "incorrect_answers": [
+        "Lubrication",
+        "Cooling",
+        "Reduce corrosion"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "When was Cadillac founded?",
+      "correct_answer": "1902",
+      "incorrect_answers": [
+        "1964",
+        "1898",
+        "1985"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which one of the following is not made by Ford?",
+      "correct_answer": "Camry",
+      "incorrect_answers": [
+        "Fusion",
+        "Model A",
+        "F-150"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "The snowmobile was invented by Canadian Joseph-Armand Bombardier in 1937.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of these cars is NOT considered one of the 5 Modern Supercars by Ferrari?",
+      "correct_answer": "Testarossa",
+      "incorrect_answers": [
+        "Enzo Ferrari",
+        "F40",
+        "288 GTO"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "boolean",
+      "difficulty": "hard",
+      "question": "In 1993 Swedish car manufacturer Saab experimented with replacing the steering wheel with a joystick in a Saab 9000.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The difference between the lengths of a Boeing 777-300ER and an Airbus A350-1000 is closest to:",
+      "correct_answer": "0.1m",
+      "incorrect_answers": [
+        "1m",
+        "10m ",
+        "100m"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of these is NOT a car model produced by Malaysian car manufacturer Proton?",
+      "correct_answer": "Kelisa",
+      "incorrect_answers": [
+        "Saga",
+        "Perdana",
+        "Inspira"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which one of these chassis codes are used by BMW 3-series?",
+      "correct_answer": "E46",
+      "incorrect_answers": [
+        "E39",
+        "E85",
+        "F10"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which car is the first mass-produced hybrid vehicle?",
+      "correct_answer": "Toyota Prius",
+      "incorrect_answers": [
+        "Chevrolet Volt",
+        "Honda Fit",
+        "Peugeot 308 R HYbrid"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which Variable Valve Timing technology is used by BMW?",
+      "correct_answer": "VANOS",
+      "incorrect_answers": [
+        "VVT-iw",
+        "VVEL",
+        "MultiAir"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What engine is in the Lexus SC400?",
+      "correct_answer": "1UZ-FE",
+      "incorrect_answers": [
+        "2JZ-GTE",
+        "7M-GTE",
+        "5M-GE"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which Audi does not use Haldex based all wheel drive system?",
+      "correct_answer": "Audi A8",
+      "incorrect_answers": [
+        "Audi TT",
+        "Audi S3",
+        "Audi A3"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What kind of train was Stepney, a train on the Bluebell Railway notable for his appearance in &quot;The Railway Series&quot;?",
+      "correct_answer": "LB&amp;SCR A1X",
+      "incorrect_answers": [
+        "LB&amp;SCR E2",
+        "LB&amp;SCR J1",
+        "LB&amp;SCR D1"
+      ]
+    },
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What car manufacturer gave away their patent for the seat-belt in the interest of saving lives?",
+      "correct_answer": "Volvo",
+      "incorrect_answers": [
+        "Ferrari",
+        "Ford",
+        "Renault"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following sports is not part of the triathlon?",
+      "correct_answer": "Horse-Riding",
+      "incorrect_answers": [
+        "Cycling",
+        "Swimming",
+        "Running"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In golf, what name is given to a hole score of two under par?",
+      "correct_answer": "Eagle",
+      "incorrect_answers": [
+        "Birdie",
+        "Bogey",
+        "Albatross"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which English football club has the nickname &#039;The Foxes&#039;?",
+      "correct_answer": "Leicester City",
+      "incorrect_answers": [
+        "Northampton Town",
+        "Bradford City",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In what sport is a &quot;shuttlecock&quot; used?",
+      "correct_answer": "Badminton",
+      "incorrect_answers": [
+        "Table Tennis",
+        "Rugby",
+        "Cricket"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which team won the 2015-16 English Premier League?",
+      "correct_answer": "Leicester City",
+      "incorrect_answers": [
+        "Liverpool",
+        "Cheslea",
+        "Manchester United"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What year did the New Orleans Saints win the Super Bowl?",
+      "correct_answer": "2010",
+      "incorrect_answers": [
+        "2008",
+        "2009",
+        "2011"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "This Canadian television sportscaster is known for his &quot;Hockey Night in Canada&quot; role, a commentary show during hockey games.",
+      "correct_answer": "Don Cherry",
+      "incorrect_answers": [
+        "Don McKellar",
+        "Don Taylor ",
+        "Donald Sutherland"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which boxer was banned for taking a bite out of Evander Holyfield&#039;s ear in 1997?",
+      "correct_answer": "Mike Tyson",
+      "incorrect_answers": [
+        "Roy Jones Jr.",
+        "Evander Holyfield",
+        "Lennox Lewis"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the most common type of pitch thrown by pitchers in baseball?",
+      "correct_answer": "Fastball",
+      "incorrect_answers": [
+        "Slowball",
+        "Screwball",
+        "Palmball"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "There are a total of 20 races in Formula One 2016 season.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The F1 season of 1994 is remembered for what tragic event?",
+      "correct_answer": "Death of Ayrton Senna (San Marino)",
+      "incorrect_answers": [
+        "The Showdown (Australia)",
+        "Verstappen on Fire (Germany)",
+        "Schumacher's Ban (Britain)"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the highest belt you can get in Taekwondo?",
+      "correct_answer": "Black",
+      "incorrect_answers": [
+        "White",
+        "Red",
+        "Green"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Tennis was once known as Racquetball.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Formula E is an auto racing series that uses hybrid electric race cars.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which portuguese island is soccer player Cristiano Ronaldo from?",
+      "correct_answer": "Madeira",
+      "incorrect_answers": [
+        "Terceira",
+        "Santa Maria",
+        "Porto Santo"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Why was The Green Monster at Fenway Park was originally built?",
+      "correct_answer": "To prevent viewing games from outside the park.",
+      "incorrect_answers": [
+        "To make getting home runs harder.",
+        "To display advertisements.",
+        "To provide extra seating."
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "How many French Open's did Bj-rn Borg win?",
+      "correct_answer": "6",
+      "incorrect_answers": [
+        "4",
+        "9",
+        "2"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which Formula 1 driver switched teams in the middle of the 2017 season?",
+      "correct_answer": "Carlos Sainz Jr.",
+      "incorrect_answers": [
+        "Daniil Kvyat",
+        "Jolyon Palmer",
+        "Rio Haryanto"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the name of the AHL affiliate of the Toronto Maple Leafs?",
+      "correct_answer": "Toronto Marlies",
+      "incorrect_answers": [
+        "Toronto Rock",
+        "Toronto Argonauts",
+        "Toronto Wolfpack"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of these countries' national teams qualified for the 2018 FIFA World Cup in Russia?",
+      "correct_answer": "Tunisia",
+      "incorrect_answers": [
+        "United States of America",
+        "Italy",
+        "Netherlands"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What tool lends it's name to a last-stone advantage in an end in Curling?",
+      "correct_answer": "Hammer",
+      "incorrect_answers": [
+        "Wrench",
+        "Drill",
+        "Screwdriver"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which Italian footballer told Neuer where he&#039;s putting his shot and dragging it wide, during the match Italy-Germany, UEFA EURO 2016?",
+      "correct_answer": "Pelle",
+      "incorrect_answers": [
+        "Insigne",
+        "Barzagli",
+        "Giaccherini"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which female player won the gold medal of table tennis singles in 2016 Olympics Games?",
+      "correct_answer": "DING Ning (China)",
+      "incorrect_answers": [
+        "LI Xiaoxia (China)",
+        "Ai FUKUHARA (Japan)",
+        "Song KIM (North Korea)"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the full name of the footballer 'Cristiano Ronaldo'?",
+      "correct_answer": "Cristiano Ronaldo dos Santos Aveiro",
+      "incorrect_answers": [
+        "Cristiano Ronaldo los Santos Diego",
+        "Cristiano Armando Diego Ronaldo",
+        "Cristiano Luis Armando Ronaldo"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What team did England beat in the semi-final stage to win in the 1966 World Cup final?",
+      "correct_answer": "Portugal",
+      "incorrect_answers": [
+        "West Germany",
+        "Soviet Union",
+        "Brazil"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which player 'kung-fu' kicked a Crystal Palace fan in January 1995?",
+      "correct_answer": "Eric Cantona",
+      "incorrect_answers": [
+        "David Seamen",
+        "Ashley Cole",
+        "Mark Hughes"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Who is Manchester United&#039;s leading appearance maker?",
+      "correct_answer": "Ryan Giggs",
+      "incorrect_answers": [
+        "David Beckham",
+        "Wayne Rooney",
+        "Eric Cantona"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The Mazda 787B won the 24 Hours of Le Mans in what year?",
+      "correct_answer": "1991",
+      "incorrect_answers": [
+        "1990",
+        "2000",
+        "1987"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is 'The Sport of Kings'?",
+      "correct_answer": "Horse Racing",
+      "incorrect_answers": [
+        "Chess",
+        "Jousting",
+        "Fencing"
+      ]
+    },
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which English football team is nicknamed 'The Tigers'?",
+      "correct_answer": "Hull City",
+      "incorrect_answers": [
+        "Cardiff City",
+        "Bristol City",
+        "Manchester City"
+      ]
+    }
+  ]
+}

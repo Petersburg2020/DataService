@@ -1,0 +1,51 @@
+{
+	"type": "Book", 
+	"title": "PIServices Java Tutorials", 
+	"author": "Uareime P. E.", 
+	"summary": "This book is a brief Java Tutorial written for beginners.", 
+	"serial-number": "N4LFCBFO59G6", 
+	"date-of-publication": "13 Sep 2022", 
+	"pages": [
+		{
+			"step": 0, 
+			"encode": "Page", 
+			"number": 1, 
+			"top-heading": {
+				"step": 0, 
+				"encode": "Heading", 
+				"tag": "element-heading", 
+				"heading": "Table of Contents", 
+				"body": {
+				}
+			}, 
+			"body": {
+				"step": 0, 
+				"encode": "Body", 
+				"element-size": 2, 
+				"elements": [
+					{
+						"step": 0, 
+						"encode": "List", 
+						"item-count": 3, 
+						"tag": "list", 
+						"items": [
+							"1. Introduction", 
+							"2. A Change Begins", 
+							"3. Home For The Weak"
+						], 
+						"body": {
+						}
+					}, 
+					{
+						"step": 0, 
+						"encode": "Text", 
+						"tag": "element-text", 
+						"text": "Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Ultrices in iaculis nunc sed augue lacus viverra vitae. Amet aliquam id diam maecenas. Ultricies tristique nulla aliquet enim tortor at. Egestas erat imperdiet sed euismod. Elit pellentesque habitant morbi tristique senectus et. Amet consectetur adipiscing elit pellentesque habitant. Risus at ultrices mi tempus imperdiet nulla. Cursus in hac habitasse platea dictumst.", 
+						"body": {
+						}
+					}
+				]
+			}
+		}
+	]
+}

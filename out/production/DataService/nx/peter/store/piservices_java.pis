@@ -1,0 +1,43 @@
+<BOOK
+	"title"="PIServices Java Tutorials"
+	"author"="Uareime P. E."
+	"summary"="This book is a brief Java Tutorial written for beginners."
+	"serial-number"="591I2M2E1KJO"
+	"date-of-publication"="03 Sep 2022">
+	<PAGES>
+		<PAGE
+			"step"=0
+			"encode"="Page"
+			"number"=1>
+			<TOP-HEADING
+				"step"=0
+				"encode"="Heading">
+				<HEADING>Table of Contents</HEADING>
+				<BODY></BODY>
+			</TOP-HEADING>
+			<BODY
+				"step"=0
+				"element-size"=2>
+				<ELEMENTS>
+					<LIST
+						"step"=0
+						"encode"="List"
+						"item-count"=3>
+						<ITEMS>
+							<ITEM>1. Introduction</ITEM>
+							<ITEM>2. A Change Begins</ITEM>
+							<ITEM>3. Home For The Weak</ITEM>
+						</ITEMS>
+						<BODY></BODY>
+					</LIST>
+					<ELEMENT-TEXT
+						"step"=0
+						"encode"="Text">
+						<TEXT>Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Ultrices in iaculis nunc sed augue lacus viverra vitae. Amet aliquam id diam maecenas. Ultricies tristique nulla aliquet enim tortor at. Egestas erat imperdiet sed euismod. Elit pellentesque habitant morbi tristique senectus et. Amet consectetur adipiscing elit pellentesque habitant. Risus at ultrices mi tempus imperdiet nulla. Cursus in hac habitasse platea dictumst.</TEXT>
+						<BODY></BODY>
+					</ELEMENT-TEXT>
+				</ELEMENTS>
+			</BODY>
+		</PAGE>
+	</PAGES>
+</BOOK>
