@@ -980,11 +980,11 @@ public class DataManager {
                     // System.out.println("DTag: " + dTag);
                     if (dTag == null)
                         break;
-					Letters.Words words = new Word(dTag).getWords();
-					if (words.isNotEmpty()) {
-						Word word = words.get(0).remove("<");
-						dTag = word.contains(">") ? word.subLetters(0, word.indexOf(">")).get() : word.get();
-					} else dTag = null;
+                    Letters.Words words = new Word(dTag).getWords();
+                    if (words.isNotEmpty()) {
+                        Word word = words.get(0).remove("<");
+                        dTag = word.contains(">") ? word.subLetters(0, word.indexOf(">")).get() : word.get();
+                    } else dTag = null;
                     // dTag = words.isNotEmpty() ? words.get(0).remove("<").subLetters(0, words.get(0).indexOf(">")).get() : null;
                     // System.out.println("DTag: " + dTag);
                     if (dTag == null)
@@ -1148,7 +1148,8 @@ public class DataManager {
             case LONG -> !extractLongs(value).isEmpty() ? extractLongs(value).get(0) : Long.MIN_VALUE;
             case FLOAT -> !extractFloats(value).isEmpty() ? extractFloats(value).get(0) : Float.MIN_VALUE;
             case DOUBLE -> !extractDecimals(value).isEmpty() ? extractDecimals(value).get(0) : Double.MIN_VALUE;
-            case STRING -> value.length() > 1 ? new Word(value).remove("\"", value.length() - 2).remove("\"").replaceAll("@10", "\n").replaceAll("@09", "\t").get() : value;
+            case STRING ->
+                    value.length() > 1 ? new Word(value).remove("\"", value.length() - 2).remove("\"").replaceAll("@10", "\n").replaceAll("@09", "\t").get() : value;
             default -> null;
         };
     }

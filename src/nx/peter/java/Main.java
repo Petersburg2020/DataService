@@ -2,21 +2,17 @@ package nx.peter.java;
 
 import nx.peter.java.bible.AKJVBible;
 import nx.peter.java.bible.Bible;
-import nx.peter.java.context.Context;
 import nx.peter.java.context.Reader;
-import nx.peter.java.context.Writer;
 import nx.peter.java.document.Model;
 import nx.peter.java.document.core.Document;
 import nx.peter.java.document.reader.DocumentReader;
+import nx.peter.java.document.type.Book;
 import nx.peter.java.document.writer.DocumentWriter;
-import nx.peter.java.json.core.Root;
+import nx.peter.java.document.writer.Page;
 import nx.peter.java.json.reader.JsonObject;
 import nx.peter.java.json.reader.JsonReader;
-import nx.peter.java.json.writer.JsonWriter;
-import nx.peter.java.pis.reader.PisReader;
-import nx.peter.java.service.Service;
 import nx.peter.java.storage.File;
-import nx.peter.java.storage.FileManager;
+import nx.peter.java.util.Util;
 import nx.peter.java.util.advanced.Advanced;
 import nx.peter.java.util.data.DataManager;
 import nx.peter.java.util.data.Word;
@@ -24,6 +20,7 @@ import nx.peter.java.util.data.Word;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -63,8 +60,49 @@ public class Main {
             @Override
             public void onSearchCompleted(Bible.Result<Bible.Verse> result, long durationInMillis) {
                 println(result.get(1));
+
+                nx.peter.java.document.writer.Document doc = new Book();
+                Scanner scanner = new Scanner(System.in);
+                print("Title: ");
+                doc.setTitle(scanner.nextLine());
+                print("Author: ");
+                doc.setAuthor(scanner.nextLine());
+                print("Summary: ");
+                doc.setSummary(scanner.nextLine());
+                print("Serial-Number: ");
+                doc.setSerialNumber(scanner.nextLine());
+                print("Number of pages: ");
+                int pages = scanner.nextInt();
+                int number = 1;
+                while (pages > 0) {
+                    Page page = new nx.peter.java.document.core.Page.Creator(number);
+
+                    doc.addPages(page);
+                    pages--;
+                    number++;
+                }
+
+                print("Do you wish to save the document? (y/N): ");
+                String resp = scanner.nextLine();
+                Util.sleep(200);
+                if (resp.toLowerCase().startsWith("y")) {
+                    print("Enter file name: ");
+                    doc.setFilePath(scanner.nextLine());
+                    print("Saving Document");
+                    Util.sleep(1000);
+                    print(".");
+                    Util.sleep(1000);
+                    print(".");
+                    Util.sleep(1000);
+                    print(".");
+                    Util.sleep(500);
+                    if (new DocumentWriter(doc).store()) println("\nFile saved successfully!");
+                    else println("\nFile not saved!");
+                }
             }
         });
+
+
     }
 
     public static class Test extends Model {
