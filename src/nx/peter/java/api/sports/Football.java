@@ -38,6 +38,13 @@ public interface Football extends Api {
      */
     record Match(String date, String thumbnail, Teams teams, Competition competition, LiveStream stream,
                  Videos videos) {
+        public MatchDetail getDetail() {
+            return new MatchDetail(
+                    competition.name,
+                    teams.home.name,
+                    teams.away.name
+            );
+        }
     }
 
     class Matches extends Items<Matches, Match> {
@@ -46,16 +53,7 @@ public interface Football extends Api {
         }
 
         public MatchDetails getDetails() {
-            return new MatchDetails(
-                    items.stream().
-                            map(match ->
-                                    new MatchDetail(
-                                            match.competition.name,
-                                            match.teams.home.name,
-                                            match.teams.away.name
-                                    )
-                            )
-                            .toList());
+            return new MatchDetails(items.stream().map(Match::getDetail).toList());
         }
     }
 
@@ -68,7 +66,7 @@ public interface Football extends Api {
     record MatchDetail(String competition, String home, String away) {
         @Override
         public String toString() {
-            return home + " vs " + away;
+            return "(" + competition + ") => " + home + " vs " + away;
         }
     }
 

@@ -1,29 +1,14 @@
 package nx.peter.java;
 
 import nx.peter.java.api.Api;
-import nx.peter.java.api.ApiService;
+import nx.peter.java.api.RapidApi;
 import nx.peter.java.api.sports.Football;
 import nx.peter.java.api.sports.Sports;
 import nx.peter.java.api.utility.VisualRecognition;
 import nx.peter.java.api.utility.recognition.OCRText;
-import nx.peter.java.bible.AKJVBible;
-import nx.peter.java.bible.Bible;
-import nx.peter.java.context.Reader;
 import nx.peter.java.document.Model;
-import nx.peter.java.document.core.Document;
-import nx.peter.java.document.reader.DocumentReader;
-import nx.peter.java.document.writer.DocumentWriter;
-import nx.peter.java.json.reader.JsonObject;
-import nx.peter.java.json.reader.JsonReader;
-import nx.peter.java.storage.File;
-import nx.peter.java.util.advanced.Advanced;
-import nx.peter.java.util.data.DataManager;
-import nx.peter.java.util.data.Word;
-import nx.peter.java.api.RapidApi;
-import nx.peter.java.web.WebManger;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -33,7 +18,7 @@ public class Main {
         // println(api.getResponse().getBody());
 
         Sports.getFootball(
-                new ApiService.OnRequestListener<>() {
+                new Sports.OnRequestListener<>() {
                     @Override
                     public void onRequesting(Football api, long currentTimeInSecs) {
                         // println(currentTimeInSecs + "ms");
@@ -47,7 +32,7 @@ public class Main {
         );
 
         VisualRecognition.getOCRText("https%3A%2F%2Fqph.cf2.quoracdn.net%2Fmain-qimg-60dad75c0dddf8f4aa1a95040d7c3ca5-pjlq",
-                new ApiService.OnRequestListener<>() {
+                new VisualRecognition.OnRequestListener<>() {
                     @Override
                     public void onRequesting(OCRText api, long currentTimeInSecs) {
                         println(currentTimeInSecs);
