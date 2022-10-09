@@ -36,12 +36,12 @@ public class Main {
                 new ApiService.OnRequestListener<>() {
                     @Override
                     public void onRequesting(Football api, long currentTimeInSecs) {
-                        println(currentTimeInSecs + "ms");
+                        // println(currentTimeInSecs + "ms");
                     }
 
                     @Override
                     public void onCompleted(Football api, Api.Status status, long durationInMillis) {
-                        println(api.getMatches().get(1).thumbnail());
+                        println(api.getMatches());
                     }
                 }
         );
