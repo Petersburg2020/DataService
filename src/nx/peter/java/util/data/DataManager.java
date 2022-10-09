@@ -714,9 +714,9 @@ public class DataManager {
     }
 
     public static <JA extends JsonElement, JO extends JsonElement, JE extends JsonElement> Json<JA, JO, JE> extractJson(CharSequence json) {
-        if (json.toString().trim().startsWith("[") && json.toString().trim().endsWith("]"))
+        if (json != null && json.toString().trim().startsWith("[") && json.toString().trim().endsWith("]"))
             return new Json<>(extractArray(json));
-        else if (json.toString().trim().startsWith("{") && json.toString().trim().endsWith("}"))
+        else if (json != null && json.toString().trim().startsWith("{") && json.toString().trim().endsWith("}"))
             return new Json<>(extractObject(json));
         return new Json<>();
     }

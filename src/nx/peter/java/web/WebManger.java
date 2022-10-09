@@ -1,5 +1,8 @@
 package nx.peter.java.web;
 
+import nx.peter.java.json.reader.JsonElement;
+import nx.peter.java.json.reader.JsonObject;
+import nx.peter.java.json.reader.JsonReader;
 import nx.peter.java.json.writer.JsonWriter;
 import nx.peter.java.storage.FileManager;
 import nx.peter.java.util.Util;
@@ -8,11 +11,20 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.http.HttpRequest;
 
 public class WebManger {
 
     public <O> O getUrlModel(CharSequence url, Class<O> clazz) {
         return new JsonWriter().getContext().fromJson(getUrlData(url, "GET"), false, clazz);
+    }
+
+    public static Response getResponse(CharSequence url) {
+        return getResponse(url, "GET");
+    }
+
+    public static Response getResponse(CharSequence url, CharSequence requestMethod) {
+        return new IResponse(new JsonReader(getUrlData(url, requestMethod), false).getRoot().getElement());
     }
 
     public static String getUrlData(CharSequence url, CharSequence requestMethod) {
@@ -86,5 +98,29 @@ public class WebManger {
     public static HttpURLConnection openHttpURLConnection(CharSequence url) {
         URLConnection conn = openConnection(url);
         return conn != null && url.toString().trim().startsWith("http") ? (HttpURLConnection) conn : null;
+    }
+
+
+
+
+    public interface Response {
+        JsonElement<?> getJson();
+    }
+
+    protected static class IResponse implements Response {
+        protected JsonElement<?> json;
+
+        public IResponse(JsonElement<?> json) {
+            this.json = json;
+        }
+
+        public JsonElement<?> getJson() {
+            return json;
+        }
+
+        @Override
+        public String toString() {
+            return json != null ? json.getPrettyPrinter().toString() : "Null Response";
+        }
     }
 }

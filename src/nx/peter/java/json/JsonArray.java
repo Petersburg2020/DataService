@@ -64,11 +64,11 @@ public class JsonArray extends JsonElement<JsonArray>
     @Override
     public String getString(int index) {
         Object value = get(index);
-        return isString(value) ? new Word((String) value).replaceAll("@10", '\n').replaceAll("@09", '\t').get() : null;
+        return isString(value) ? new Word((String) value).replaceAll("\n", System.lineSeparator()).replaceAll("@10", System.lineSeparator()).replaceAll("@09", '\t').get() : null;
     }
 
     @Override
-    public JsonElement getElement(int index) {
+    public JsonElement<?> getElement(int index) {
         Object value = get(index);
         return isArray(value) ? new JsonArray((List<Object>) value) : isObject(value) ? new JsonObject((Map<String, Object>) value) : null;
     }

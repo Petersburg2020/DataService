@@ -80,7 +80,7 @@ public class JsonObject extends JsonElement<JsonObject>
     @Override
     public String getString(CharSequence key) {
         Object value = get(key);
-        return isString(value) ? new Word((String) value).replaceAll("@10", "\n").replaceAll("@09", '\t').get() : null;
+        return isString(value) ? new Word((String) value).replaceAll("\n", System.lineSeparator()).replaceAll("@10", System.lineSeparator()).replaceAll("@09", '\t').get() : null;
     }
 
     @Override

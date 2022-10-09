@@ -299,6 +299,7 @@ public abstract class Letters<L extends Letters> extends Data<L> {
     public L replaceAll(CharSequence old, CharSequence text) {
         if (old != null && text != null)
             data = data.replaceAll(old.toString(), text.toString());
+        // System.out.println(data);
         return (L) this;
     }
 

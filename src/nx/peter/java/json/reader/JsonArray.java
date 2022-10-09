@@ -3,9 +3,9 @@ package nx.peter.java.json.reader;
 public interface JsonArray<J extends JsonArray> extends JsonElement<J> {
     Object get(int index);
     String getString(int index);
-    nx.peter.java.json.core.JsonElement getElement(int index);
-    JsonArray getArray(int index);
-    JsonObject getObject(int index);
+    nx.peter.java.json.core.JsonElement<?> getElement(int index);
+    JsonArray<?> getArray(int index);
+    JsonObject<?> getObject(int index);
     boolean getBoolean(int index, boolean defaultValue);
     double getDouble(int index, double defaultValue);
     float getFloat(int index, float defaultValue);
