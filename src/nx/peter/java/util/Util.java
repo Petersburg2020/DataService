@@ -515,6 +515,90 @@ public class Util {
         return texts;
     }
 
+    public static double nthRoot(double num, int nth) {
+        double xPre = Math.random() * 10;
+        double eps = 0.001;
+        double delX = 2147483647;
+        double xK = 0.0;
+
+        while (delX > eps) {
+            xK = ((nth - 1) * xPre + num / Math.pow(xPre, nth - 1)) / nth;
+            delX = Math.abs(xK - xPre);
+            xPre = xK;
+        }
+        return xK;
+    }
+
+    public static long nthRoot(int num, int nth) {
+        return Math.round(nthRoot((double) num, nth));
+    }
+
+    public static double logN(double num, int nth) {
+        return Math.log(num) / Math.log(nth);
+    }
+
+    public static int logN(int num, int nth) {
+        return (int) logN((double) num, nth);
+    }
+
+    public static int toNearestWhole(double value, int numberOfZeros) {
+        String text = (value + "");
+        String whole = text.substring(0, text.indexOf("."));
+        int digits = whole.length();
+
+        String format;
+        if (digits > numberOfZeros && numberOfZeros > 0) {
+            if (digits - numberOfZeros > 1) {
+                String main = whole.substring(0, digits - numberOfZeros);
+                int last = Integer.parseInt(whole.charAt(digits - numberOfZeros) + "");
+                // Main.println(last);
+                if (last >= 5)
+                    main = (main.length() > 1 ? main.substring(0, main.length() - 1) : main.charAt(0) + "") + (Integer.parseInt("" + main.charAt(main.length() - 1)) + 1);
+                format = main + "0".repeat(numberOfZeros);
+            } else {
+                format = whole.charAt(0) + "0".repeat(numberOfZeros);
+            }
+            return Integer.parseInt(format);
+        }
+        return toNearestWhole(value);
+    }
+
+    public static int toNearestWhole(double value) {
+        String text = value + "";
+
+        String whole = text.substring(0, text.indexOf("."));
+        String decimal = text.contains(".") ? text.substring(text.indexOf(".") + 1) : "";
+
+        if (text.contains(".")) {
+            int last = Integer.parseInt(decimal.charAt(0) + "");
+            if (last >= 5)
+                whole = (whole.length() > 1 ? whole.substring(0, whole.length() - 1) : whole.charAt(0) + "") + (Integer.parseInt(whole.charAt(whole.length() - 1) + "") + 1);
+            return Integer.parseInt(whole);
+        }
+        return (int) value;
+    }
+
+    public static int toNearestTen(double value) {
+        return toNearestWhole(value, 1);
+    }
+
+    public static int toNearestHundred(double value) {
+        return toNearestWhole(value, 2);
+    }
+
+    public static int toNearestThousand(double value) {
+        return toNearestWhole(value, 3);
+    }
+
+    public static int toNearestTenThousand(double value) {
+        return toNearestWhole(value, 4);
+    }
+
+    public static int toNearestHundredThousand(double value) {
+        return toNearestWhole(value, 5);
+    }
+
+
     public static double toNDecimalPlace(double value, int decimalPlace) {
         if (decimalPlace == 0) return Math.round(value);
         int decimalDigits = String.valueOf(value).substring(String.valueOf(value).indexOf(".") + 1).length();
@@ -654,9 +738,6 @@ public class Util {
         long perm = 1;
         for (int i = n; i > n - r; i--)
             perm *= i;
-        /*System.out.println("n:" + n + ", r: " + r);
-        System.out.println("Longest: " + (Long.MAX_VALUE / getFactorial(n)));
-        System.out.println("Perm: " + perm);*/
         return perm / getFactorial(r);
     }
 
@@ -1104,6 +1185,11 @@ public class Util {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getClassName(Class<?> clazz) {
+        String name = clazz.getName();
+        return name.substring(name.lastIndexOf(".") + 1);
     }
 
 

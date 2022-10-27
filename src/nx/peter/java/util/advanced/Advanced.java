@@ -1,5 +1,6 @@
 package nx.peter.java.util.advanced;
 
+import nx.peter.java.db.MySQLDatabase;
 import nx.peter.java.json.reader.JsonArray;
 import nx.peter.java.json.reader.JsonObject;
 import nx.peter.java.pis.reader.Node;
@@ -382,6 +383,20 @@ public class Advanced {
         else return ObjectDetail.Type.Object;
     }
 
+    public static String getType(ObjectDetail.Type type) {
+        return switch (type) {
+            case Boolean -> "BOOLEAN";
+            case Double -> "DECIMAL(11, 4)";
+            case Enum -> "ENUM";
+            case Float -> "FLOAT(8)";
+            case Integer -> "INTEGER";
+            case List, None, Map -> "";
+            case Long -> "BIGINT";
+            case Object -> "OBJECT";
+            case String -> "VARCHAR(200)";
+        };
+    }
+
     public static int toInt(Object obj, int def) {
         if (getType(obj).equals(ObjectDetail.Type.Integer))
             return Integer.parseInt(obj.toString());
@@ -482,6 +497,25 @@ public class Advanced {
             return getType(name).equals(Type.Integer) ? (int) get(name) : defaultValue;
         }
 
+        public List<Type> getTypes() {
+            return types;
+        }
+        public List<MySQLDatabase.DataType> getDataTypes() {
+            List<MySQLDatabase.DataType> dataTypes = new ArrayList<>();
+
+            for (String name : names)
+                dataTypes.add(new MySQLDatabase.DataType(name, Advanced.getType(getType(name))));
+
+            return dataTypes;
+        }
+
+        public MySQLDatabase.DataType getDataType(String name) {
+            int index = indexOf(name);
+            if (index == -1)
+                return null;
+            return getDataTypes().get(index);
+        }
+
         public boolean getBoolean(String name, boolean defaultValue) {
             return getType(name).equals(Type.Boolean) ? (boolean) get(name) : defaultValue;
         }
@@ -517,6 +551,9 @@ public class Advanced {
             return map;
         }
 
+        public String getName() {
+            return Util.getClassName(clazz);
+        }
         @Override
         public String toString() {
             return "Names: " + names.toString() + "\nValues: " + values.toString();

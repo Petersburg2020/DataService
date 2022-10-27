@@ -16,11 +16,9 @@ public interface Football extends Api {
     Competitions getCompetitions();
 
 
-    record Team(String name, String url) {
-    }
+    record Team(String name, String url) {}
 
-    record Teams(Team home, Team away) {
-    }
+    record Teams(Team home, Team away) {}
 
     /**
      * <h1>
@@ -36,13 +34,13 @@ public interface Football extends Api {
      * @param stream      live stream detail
      * @param videos      videos (highlight or live or both or none)
      */
-    record Match(String date, String thumbnail, Teams teams, Competition competition, LiveStream stream,
-                 Videos videos) {
+    record Match(String date, String thumbnail, Teams teams, Competition competition, LiveStream stream, Videos videos) {
         public MatchDetail getDetail() {
             return new MatchDetail(
                     competition.name,
                     teams.home.name,
-                    teams.away.name
+                    teams.away.name,
+                    stream.video.url
             );
         }
     }
@@ -63,15 +61,14 @@ public interface Football extends Api {
         }
     }
 
-    record MatchDetail(String competition, String home, String away) {
+    record MatchDetail(String competition, String home, String away, String liveStream) {
         @Override
         public String toString() {
-            return "(" + competition + ") => " + home + " vs " + away;
+            return "(" + competition + ") => " + home + " vs " + away + " -> " + liveStream;
         }
     }
 
-    record LiveStream(Video video, Teams teams) {
-    }
+    record LiveStream(Video video, Teams teams) {}
 
     class LiveStreams extends Items<LiveStreams, LiveStream> {
         public LiveStreams(List<LiveStream> items) {
@@ -79,8 +76,7 @@ public interface Football extends Api {
         }
     }
 
-    record Competition(String name, String url, int id) {
-    }
+    record Competition(String name, String url, int id) {}
 
     class Competitions extends Items<Competitions, Competition> {
         public Competitions(List<Competition> items) {
@@ -88,8 +84,7 @@ public interface Football extends Api {
         }
     }
 
-    record Video(String embed, String url, String title) {
-    }
+    record Video(String embed, String url, String title) {}
 
     class Videos extends Items<Videos, Video> {
         public Videos(List<Video> items) {

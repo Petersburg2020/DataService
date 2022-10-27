@@ -153,6 +153,7 @@ public class VisualRecognition implements ApiService {
                     return response;
                 }
             };
+            listener.onBegin(ocr);
             while (requester.getState().equals(Thread.State.RUNNABLE)) {
                 long current = System.currentTimeMillis();
                 ocr = new OCRText() {
@@ -197,16 +198,11 @@ public class VisualRecognition implements ApiService {
                     }
                 };
 
-                System.out.println("Check: " + !requester.getState().equals(Thread.State.TERMINATED));
+                // System.out.println("Check: " + !requester.getState().equals(Thread.State.TERMINATED));
                 // Process Listener
-                if (!requester.getState().equals(Thread.State.TERMINATED)) {
-                    int duration = (int) ((current - start.get()) / 1000);
-                    System.out.println("Here!");
-                    if (duration - counter[0] >= 1) {
-                        listener.onRequesting(ocr, duration);
-                        counter[0] = duration;
-                    }
-                } else break;
+                if (!requester.getState().equals(Thread.State.TERMINATED))
+                        listener.onRequesting(ocr, current - start.get());
+                else break;
             }
             listener.onCompleted(ocr, ocr.getResponse().getStatus(), System.currentTimeMillis() - start.get());
         }).start();

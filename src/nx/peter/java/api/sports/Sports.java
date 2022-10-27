@@ -310,6 +310,7 @@ public class Sports implements ApiService {
                     return getResponse().toString();
                 }
             };
+            listener.onBegin(football);
             while (requester.getState().equals(Thread.State.RUNNABLE)) {
                 long current = System.currentTimeMillis();
                 football = new Football() {

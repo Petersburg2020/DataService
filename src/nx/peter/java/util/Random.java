@@ -1,5 +1,8 @@
 package nx.peter.java.util;
 
+import nx.peter.java.Main;
+import nx.peter.java.util.data.Number;
+
 public class Random {
 	static java.util.Random r = new java.util.Random();
 
@@ -13,6 +16,10 @@ public class Random {
 
 	public static double nextDouble(){
 		return r.nextDouble();
+	}
+
+	public static Number nextNumber() {
+		return new Number(nextDouble() + nextInt(Integer.MAX_VALUE/200));
 	}
 
 	public static long nextLong(){
@@ -72,9 +79,13 @@ public class Random {
 			double value = nextDouble(), tempMin = min, tempMax = max;
 			min = Math.min(tempMin, tempMax);
 			max = Math.max(tempMin, tempMax);
+			int iMin = (int) min;
+			int iMax = (int) max;
+			int whole = iMax > iMin ? nextInt(iMin, iMax) : iMin;
+			value += whole;
 
 			while(value < min || value > max)
-				value = min + nextDouble();
+				value = whole + nextDouble();
 			return value;
 		}
 	}
